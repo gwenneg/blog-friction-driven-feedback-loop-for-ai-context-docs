@@ -1,0 +1,8 @@
+{
+  "name": "friction-driven-feedback-loop",
+  "description": "Skills and scripts for the friction-driven feedback loop for AI context docs",
+  "version": "1.0.0",
+  "components": {
+    "skills": "skills/"
+  }
+}
