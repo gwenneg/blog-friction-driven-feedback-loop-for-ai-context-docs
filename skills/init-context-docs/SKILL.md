@@ -171,6 +171,14 @@ paths:
 
 If a `.claude/rules/<domain>.md` file already exists, update its `paths` frontmatter and preserve the import line.
 
+After writing all rules files, check whether `.claude/rules/` is gitignored by running:
+
+```bash
+git check-ignore -v .claude/rules/
+```
+
+If the output is non-empty (meaning the directory is gitignored), report this to the user — explain that the rules files will be excluded from commits and therefore won't take effect for other developers or in CI. Use AskUserQuestion to ask whether to add a `.gitignore` exception. If the user agrees, append `!.claude/rules/` to the relevant `.gitignore` file identified in the `git check-ignore` output.
+
 ## Phase 4: Generate or update AGENTS.md
 
 Output the following text verbatim to the user before taking any other action in this phase:
